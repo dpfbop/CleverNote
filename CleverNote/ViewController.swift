@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var counterLabel: UILabel!
+    var counter: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        counterLabel.text = "\(counter)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +24,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func buttonTapped(sender: AnyObject) {
+        counter += 1
+        counterLabel.text = "\(counter)"
+    }
 }
 
